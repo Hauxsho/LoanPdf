@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+
+<div class="page2"  th:fragment = "detailsBank-F">
+<!--style="margin-top: 1rem;"-->
+
+    <p style="width: 100%; background-color: blue; color:white;text-align: center;padding:0.5rem 0rem;margin-top: 50px;">
+        Bank Details</p>
+
+    <table style="margin-bottom:50px">
+        <tbody>
+        <tr>
+            <th>Bank Name</th>
+            <td th:text="${bankDetails.bankName}"></td>
+        </tr>
+
+        <tr>
+            <th>A/c no</th>
+            <td th:text="${bankDetails.accountNumber}"></td>
+        </tr>
+
+        <tr>
+            <th>A/C Type</th>
+            <td th:text="${bankDetails.accountType}"></td>
+        </tr>
+
+        <tr>
+            <th>IFSC Code</th>
+            <td th:text="${bankDetails.ifsccode}"></td>
+        </tr>
+        <tr>
+            <th>GST Address of Entity : </th>
+            <td th:text="${gstDetails.gstAddress}"></td>
+        </tr>
+        <tr>
+            <th>GSTIN No. : </th>
+            <td th:text="${gstDetails.gstInNumber}"></td>
+        </tr>
+
+
+        </tbody></table>
+
+    <p th:text="'For and on behalf of ' + ${businessDetails.applicantName}" style="margin-bottom:50px;font-weight: bold;"></p>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Footer</title>
+</head>
+<body>
+
+    <footer th:fragment = "footerOne">
+
+        <div class="container"  >
+            <div>
+            <small  th:text = "'Signed by : '+ ${coApplicantDetails.coappName} "></small>
+            <br/>
+            <small>eSigned using Aadhaar (digio.in)</small>
+            <br/>
+            <small>Date : </small>
+            </div>
+        </div>
+
+        <p style="page-break-after:always;"></p>
+    </footer>
+
+</body>
+</html>

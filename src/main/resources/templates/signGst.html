@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="page3" th:fragment = "signGst-F">
+
+    <div style="height:100vh;top:1rem">
+
+        <p style="width: 100%; background-color: blue; color:white;text-align: center;padding:0.5rem 0rem">Signature and Photographs</p>
+        <p>Signature and Photographs
+            Please affix passport size photograph of all loan account holders in case of an Individual / Authorised Signatory/ies (in case of Partnership Firm
+            /Limited Liability of Partnership (LLP), Company).</p>
+<br/>
+
+
+
+        <div style="margin-top: 1rem;">
+            <div class="row">
+
+                <div class="column">
+                    <div class="card">
+
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <img th:src="${coApplicantDetails.coappImg }" alt="" style="width:100%;height:100%"/>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card"></div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <br/>
+        <br/>
+
+        <p style="width: 100%; background-color: blue; color:white;text-align: center;padding:0.5rem 0rem;">For GFST Use Only</p>
+        <p>Processing Fee Details: </p>
+
+        <table style="margin-bottom:50px">
+            <tbody><tr>
+                <td>Sl No.</td>
+                <td>Cheque</td>
+                <td>Dated</td>
+                <td>Drawn On</td>
+                <td>Amount</td>
+            </tr>
+            <tr>
+                <td >1</td>
+                <td th:text = "${gsft.cheque}"></td>
+                <td th:text = "${gsft.dated}"></td>
+                <td th:text = "${gsft.drawnOn}"></td>
+                <td th:text = "${gsft.amount}"></td>
+            </tr>
+            <tr>
+                <td colspan="2">Signature Of Sourcing Staff</td>
+                <td colspan="2">Application ID :</td>
+                <td>Name Of Sourcing Staff : </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p style="align-text:left" th:text="'Place : '+ ${businessDetails.city}"></p>
+        <p  style="align-text:right" th:text= "'Date : ' + ${applicationDetails.date}"></p>
+        <br/>
+        <hr/>
+        <br/>
+        <p th:text="'Customer Acknowledgement                               : Application No. '+ ${applicationDetails.applicationNumber}"></p>
+        <p>
+            Dear Customer,
+            This is to acknowledge that Growth Source Financial Services Private Limited (GSFT) has received your
+            application form for a loan amount of Rs. 1,000,000.00/- GSFT shall communicate its decision on your
+            application within 30 working days. This is subject to submission of all documents and conformance to
+            internal guidelines of GSFT. Please quote your application number in all your future correspondence.
+        </p>
+
+    </div>
+</div>
+</body>
+</html>

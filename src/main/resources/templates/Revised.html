@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div th:fragment = "Revised-F">
+
+
+    <div>
+        <p style="margin-left:auto;margin-right:0;font-weight:bold ;" th:include =" header :: header-F">
+        </p>
+        <p ></p>
+        <br/>
+        <p th:text="${businessDetails.applicantName}"></p>
+        <br/>
+        <p th:text="${businessDetails.registeredAddress}"></p><br/>
+        <p th:text="${businessDetails.phoneApplicant}"></p><br/>
+        <br/>
+        <p>Dear Sir/Ma’am,</p><br/>
+            <p>We refer to your application for a Business Loan and we are glad to inform you that we have sanctioned you the
+                facility subject to the terms and conditions contained in this Sanction letter.</p>
+        <br/><p>You agree to pay the applicable charges to the Lender, with regard to this Facility. Such charges shall be as set
+                out in the Schedule of Charges below or as maybe communicated to you through the Platform from time to time.</p>
+        <br/><p>Below are the summary of the most important terms and conditions which shall be read along with the
+            Facility Agreement based on which your Facility shall be governed.</p>
+        <br/>
+
+            <table>
+
+        <thead>
+        <tr>
+            <th>Particulars </th>
+            <th>Details</th>
+        </tr>
+        </thead>
+
+
+        <tbody>
+        <tr>
+            <td>Borrower</td>
+            <td th:text="${businessDetails.applicantName}"></td>
+        </tr>
+
+        <tr>
+            <td>Co-Borrower 1</td>
+            <td th:text="${coApplicantDetails.coappName}"></td>
+        </tr>
+
+        <tr>
+            <td>Address</td>
+            <td th:text="${businessDetails.registeredAddress}"></td>
+        </tr>
+
+        <tr>
+            <td>Contact No</td>
+            <td th:text="${businessDetails.phoneApplicant}"></td>
+        </tr>
+
+        <tr>
+            <td>Loan Application ID</td>
+            <td th:text=" ${applicationDetails.applicationNumber}"></td>
+        </tr>
+
+        </tbody>
+
+
+
+         </table>
+
+        <br/>
+
+        <p style="margin-top=20px;" th:include =" footer :: footerOne "></p>
+
+    </div>
+
+    <div>
+        <p style="margin-left:auto;margin-right:0;font-weight:bold ;" th:include =" header :: header-F">
+        </p>
+        <p ></p>
+        <p style="width: 100%;font-weight:bold ;background-color: white; color:black;text-align: center;padding:0.5rem 0rem">FACILITY DETAILS</p>
+        <br/>
+
+        <table>
+
+            <tbody>
+            <tr>
+                <td>Type of Facility</td>
+                <td th:text=" ${facilityDeatils.typeOfFacility}" >Business Loan</td>
+            </tr>
+
+            <tr>
+                <td>Number of Tranches</td>
+                <td th:text=" ${facilityDeatils.numberOfTranches}">Multiple</td>
+            </tr>
+
+            <tr>
+                <td>Sanctioned Facility Amount</td>
+                <td >A group of columns</td>
+            </tr>
+
+            <tr>
+                <td>EMI Amount</td>
+                <td th:text=" ${emidetails.numberOfEMI}"></td>
+            </tr>
+
+            <tr>
+                <td>EMI Payment Due Date</td>
+                <td th:text=" ${emidetails.numberOfEMI}"></td>
+            </tr>
+
+            <tr>
+                <td>Facility Tenure</td>
+                <td th:text=" ${facilityDeatils.tenureOfFacility}">24 Months</td>
+            </tr>
+
+            <tr>
+                <td>Interest Rate</td>
+                <td >30% p.a.</td>
+            </tr>
+
+            <tr>
+                <td>Default/Penal Interest</td>
+                <td>36% pa.</td>
+            </tr>
+
+            <tr>
+                <td>Validity of Sanction Letter</td>
+                <td>1 Month</td>
+            </tr>
+
+            <tr>
+                <td>Processing Fees /Charges </td>
+                <td>2.5% (plus applicable taxes)v</td>
+            </tr>
+
+            <tr>
+                <td>Repayment Mode</td>
+                <td>By NACH Mandate</td>
+            </tr>
+
+            <tr>
+                <td>Required DSR</td>
+                <td>The Borrower shall maintain an amount of INR NA equivalent to NA EMI as cash
+                    collateral or undisbursed Facility with the Lender at the date of the Initial
+                    Disbursement</td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+        <br/>
+
+        <p style="margin-top=20px;" th:include =" footer :: footerOne "></p>
+
+    </div>
+
+    <div>
+        <p style="margin-left:auto;margin-right:0;font-weight:bold ;" th:include =" header :: header-F">
+        </p>
+        <p ></p>
+        <p style="width: 100%;font-weight:bold ;background-color: white; color:black;text-align: center;padding:0.5rem 0rem">(Schedule of Charges)</p>
+<br/>
+        <table>
+
+            <tbody>
+            <tr>
+                <td>Fee and Charges*</td>
+                <td>Amount</td>
+            </tr>
+
+            <tr>
+                <td>Bounce Charges</td>
+                <td>Rs 500 for every Cheque/ Payment Instrument/ ECS /NACH Dishonour plus GST</td>
+            </tr>
+
+            <tr>
+                <td>Instrument swap Charges </td>
+                <td>Rs 500 per swap plus GST</td>
+            </tr>
+
+            <tr>
+                <td>Late Payment Penal
+                    (LPP)Interest</td>
+                <td>24% pa on Secured, 36% pa on Unsecured over and above ROI of each loan with 5 Days Grace</td>
+            </tr>
+
+            <tr>
+                <td>Prepayment Charges</td>
+                <td><p>Less than 6 months of aging. No Prepayment Allowed</p>
+                    <p>Greater than 6 months of aging,2% up to 25% only in a period of 6 months</p></td>
+            </tr>
+
+            <tr>
+                <td>Foreclosure Charges</td>
+                <td><p>Less than 6 months Ageing: No Foreclosure Allowed</p>
+                    <p>Greater than 6 months: 5% of current POS</p></td>
+            </tr>
+
+            <tr>
+                <td>Loan Statement Charge</td>
+                <td>Nil for every financial year, Rs 500 plus GST for second time onwards</td>
+            </tr>
+
+            <tr>
+                <td>Duplicate NOC Charges</td>
+                <td>Rs 250 plus GST</td>
+            </tr>
+
+            <tr>
+                <td>Legal Charges</td>
+                <td>At Actuals</td>
+            </tr>
+
+            <tr>
+                <td>Personal Visit Charges</td>
+                <td>At Actuals</td>
+            </tr>
+
+            <tr>
+                <td>Cash collecton charges </td>
+                <td>1% of collected/receipt amount</td>
+            </tr>
+
+            <tr>
+                <td>Loan Foreclosure Leter
+                    Charges</td>
+                <td>Rs 300 plus GST</td>
+            </tr>
+
+            <tr>
+                <td>Loan Cancellaton Charges</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Other Charges</td>
+                <td>As communicated by GSFT from tme to tme. Charges along with applicable taxes to be collected as
+                    per sole discreton of GSFT</td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+        <br/>
+
+        <p style="margin-top=20px;" th:include =" footer :: footerOne "></p>
+
+    </div>
+
+<div>
+    <p style="margin-left:auto;margin-right:0;font-weight:bold ;" th:include =" header :: header-F">
+    </p>
+    <p ></p>
+    <br/>
+    <p style="width: 100%;font-weight:bold ; color:black;text-align: left;">Terms and Condition</p>
+    <br/>
+
+    <ol>
+        <li>Sancton of this facility shall not guarantee the disbursement of the loan which is done at the sole discreton of Growth Source Financial
+            Technologies Private Limited (GSFT).</li>
+
+        <li>This sancton leter does not consttute an ofer or an invitaton to avail or a recommendaton to enter into any transacton. GSFT shall
+            not assume any obligatons or liability tll such tme all the credit requirements/ sancton conditons are fulflled to the complete
+            satsfacton of GSFT. Any tranche disbursement will be disbursed at the sole discreton of GSFT. The disbursement will be net of any
+            obligaton to GSFT including replenishment of DSRA. The amount of DSRA will be on discreton of GSFT at that stage. If DSRA is used at
+            any given point during the loan tenor and not reinstated within agreed tmeline then GSFT can increase the DSRA amount and same will
+            be on discreton of GSFT</li>
+
+        <li>Notwithstanding the issuance of this Sancton Leter and the acceptance thereof, the GSFT in its sole discreton may decide to not
+            disburse the Facility, repudiate and rescind this Sancton Leter unilaterally with or without assigning any reasons, including in case of any
+            adverse change in the fnancial, banking, capital markets or your industry.</li>
+
+        <li>The facility shall be utlized solely for the purpose it is being sanctoned for and not for any other purpose. GSFT reserves the right to
+            recall the facility at any tme during the subsistence of the Facility Agreement with or without the occurrence of an event of default.</li>
+
+        <li>Nothing in this leter obligates GSFT to advance any facility to you tll such tme that the Facility Agreement and any other documentaton
+            including authorizaton leters (Collectvely referred to as “Financing documents”) have been executed and the terms of such Facility
+            Agreement have been fulflled to the satsfacton of GSFT.</li>
+
+        <li>All stamp dutes, levies, taxes including interest tax, service tax or other charges that are required to execute such documents shall be
+            borne by you.</li>
+
+        <li>Interest Rate/ Loan Processing Charges/ Additonal Charges are subject to revision at the sole discreton of GSFT and/ or as may be
+            applicable pursuant to RBI guidelines from tme to tme.</li>
+
+        <li>This sancton shall stand revoked and cancelled without any notce at the sole discreton of GSFT, if there are material changes in your
+            fnancial performance, any material facts concerning your ability to make payments under the Facility Agreement or any relevant aspects
+            of its request for facility are withheld, suppressed, concealed, or are found to be incorrect or untrue.
+
+            <ol type="a">
+
+                <li>All stamp dutes, levies, taxes including interest tax, service tax or other charges that are required to execute such
+                    documents shall be borne by you.</li>
+                <li>Interest Rate/ Loan Processing Charges/ Additonal Charges are subject to revision at the sole discreton of GSFT and/
+                or as may be applicable pursuant to RBI guidelines from tme to tme</li>
+                <li>This sancton shall stand revoked and cancelled without any notce at the sole discreton of GSFT, if there are material
+                    changes in your fnancial performance, any material facts concerning your ability to make payments under the Facility
+                    Agreement or any relevant aspects of its request for facility are withheld, suppressed, concealed, or are found to be incorrect
+                    or untrue.</li>
+
+            </ol>
+
+        </li>
+
+        <li>This Sancton Leter is subject to completon of all pre-disbursement conditons as required by GSFT.</li>
+
+        <li>GSFT shall also reserve the right to amend any of the terms of the Sancton Leter at it’s sole discreton.</li>
+
+        <li>This Sancton Leter will form part and parcel of the Facility Agreement. In the event of any inconsistency or confict between the terms
+            and conditons of this Sancton Leter and the Facility agreement, the terms and conditons of the Facility Agreement shall supersede and
+            prevail.</li>
+
+    </ol>
+
+<p>Please quote your loan account number in any future correspondence with GSFT to enable us to process any query at the
+    earliest. Should you require any assistance, please contact our customer service officers at 080-471-87889 or logon to
+    https://www.triti.com/ to place your request online</p>
+<br/>
+    <p>We value your relationship with GSFT and assure you of best services at all times</p>
+<br/>
+    <br/>
+    <p>Your Sincerely,</p>
+    <p style="margin-bottom=40px;">For Growth Source Financial Technologies Private Limited (Authorised Signatory)</p>
+
+<br/>
+    <p style="margin-top=20px;" th:include =" footer :: footerOne "></p>
+</div>
+
+
+</div>
+
+</body>
+</html>

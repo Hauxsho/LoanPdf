@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+
+<div class= "page1" th:fragment = "detailsApplication-F">
+
+    <div>
+        <h1 style="font-size:32px">Growth Source Financial Technologies Private Limited</h1>
+<br/>
+        <div>
+
+            <h2>BL Application Form</h2>
+            <br/>
+            <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, libero.</span>
+            <br/>
+            <span th:text="'Application Number : ' + ${applicationDetails.applicationNumber}"></span>
+            <br/>
+            <span th:text="'Date : ' + ${applicationDetails.date}"></span>
+
+
+        </div>
+
+
+    </div>
+
+    <br/>
+
+    <div style="margin-top: 1rem;">
+        <p style="width: 100%; background-color: blue; color:white;text-align: center;padding:0.5rem 0rem">Loan Details</p>
+        <table style="margin-bottom:50px">
+
+            <tbody>
+            <tr>
+                <th>Loan Amount</th>
+                <td th:text="'Rs. ' + ${loanDetails.loanAmount}"></td>
+            </tr>
+            <tr>
+                <th>Purpose Of Loan</th>
+                <td th:text="${loanDetails.loanPurpose}"></td>
+            </tr>
+            <tr>
+                <th>Tenor</th>
+                <td th:text="${loanDetails.loanTenor} + ' months'"></td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+        <p style="width: 100%; background-color: blue; color:white;text-align: center;padding:0.5rem 0rem">Business Details</p>
+
+        <table style="margin-bottom:50px">
+            <tbody><tr>
+
+                <th>Name Of Applicant </th>
+                <td th:text="${businessDetails.applicantName}"></td>
+            </tr>
+            <tr>
+                <th>Incorporation Date</th>
+                <td th:text="${businessDetails.incorporationDate}"></td>
+            </tr>
+            <tr>
+                <th>Constituion Type</th>
+                <td th:text="${businessDetails.constitutionType}"></td>
+            </tr>
+            <tr>
+                <th> Company PAN</th>
+                <td th:text="${businessDetails.companyPAN}"></td>
+            </tr>
+            <tr>
+                <th>Turnover</th>
+                <td th:text="${businessDetails.turnOver}"></td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td th:text="${businessDetails.city}"></td>
+            </tr>
+            <tr>
+                <th>Registered Address</th>
+                <td th:text="${businessDetails.registeredAddress}"></td>
+            </tr>
+            <tr>
+                <th>Correspondence Address</th>
+                <td th:text="${businessDetails.correspondenceAddress}"></td>
+            </tr>
+            <tr>
+                <th>Type of Business</th>
+                <td th:text="${businessDetails.typeOfBusiness}"></td>
+            </tr>
+            <tr>
+                <th>Phone Of Applicant</th>
+                <td th:text="${businessDetails.phoneApplicant}"></td>
+            </tr>
+            <tr>
+                <th>Email of Applicant</th>
+                <td th:text="${businessDetails.emailApplicant}"></td>
+            </tr>
+            <tr>
+                <th rowspan="0">Details of Authorised Signatory of Entity</th>
+                <td th:text = "'Name : ' + ${coApplicantDetails.coappName} +
+                                'Address : ' + ${businessDetails.registeredAddress} +
+                                'PAN No. : ' + ${businessDetails.companyPAN} +
+                                'Aadhar No. : NA
+                                 Mobile No. : ' + ${businessDetails.phoneApplicant} +
+                                'Email ID : ' + ${businessDetails.emailApplicant} "></td>
+            </tr>
+
+
+            </tbody></table>
+        <p style="margin-bottom:20px;font-weight: bold;" th:text = "'For and on behalf of ' + ${businessDetails.applicantName} "></p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

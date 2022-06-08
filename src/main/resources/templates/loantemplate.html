@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   <style>
+
+    *{
+      margin: 0;
+      padding: none;
+      box-sizing: border-box;
+      font-family:monospace ;
+      font-size:15px;
+    }
+    .container{
+      max-width: 900px;
+      margin:2rem auto;
+    }
+    table{
+      width: 100%; ;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 5px;
+      text-align: left;
+    }
+    th:first-child
+    {
+      width: 30%;
+    }
+    td:nth-child(2)
+    {
+      width: 70%;
+    }
+
+    .column {
+  width: 30%;
+  height:30%;
+  padding: 0 10px;
+  margin-bottom : 50px ;
+}
+
+  .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.container-Bank{
+      max-width: 1100px;
+      margin:2rem auto;
+      margin-bottom : 50px ;
+    }
+    .footer{
+      max-width: 1100px;
+      margin:2rem auto;
+    }
+
+ol {
+        counter-reset: item;
+      }
+      li {
+        display: block;
+        margin-bottom : 10px ;
+      }
+      li:before {
+        content: counters(item, ".") " ";
+        counter-increment: item;
+      }
+
+  </style>
+</head>
+
+<body>
+
+<!--Application Details-->
+<div class="container-Application">
+
+  <div style="height:100vh">
+
+    <div th:include = "detailsApplication :: detailsApplication-F">
+
+    </div>
+
+
+  </div>
+
+  <footer th:include = "footer :: footerOne ">
+  </footer>
+
+
+</div>
+
+<!--CoApplicants-->
+<div class="container-CoApplicants">
+
+  <div style="height:100vh;margin-bottom=30px;" >
+
+    <div th:include = "detailsCoApplicants :: detailsApplication-F">
+
+    </div>
+
+
+  </div>
+  <p style="margin-top:20px;" th:include = "footer :: footerOne ">
+  </p>
+
+</div>
+
+
+<!--Bank Details-->
+<div class="container-Bank">
+
+  <div style="height:100vh">
+
+    <div th:include = "detailsBank :: detailsBank-F">
+
+    </div>
+
+
+  </div>
+
+  <footer th:include = "footer :: footerOne ">
+  </footer>
+
+</div>
+
+<!--Terms and Condition-->
+<div class="container-termsCondition">
+
+  <div style="height:100vh">
+
+    <div th:include = "TermsAndCondition :: termsCondition-F">
+
+    </div>
+
+
+  </div>
+
+  <footer th:include = "footer :: footerOne ">
+  </footer>
+
+</div>
+
+<!--SignatureGst Details-->
+<div class="container-SignatureGst">
+
+  <div style="height:100vh">
+
+    <div th:include = "signGst :: signGst-F"></div>
+
+
+  </div>
+
+</div>
+
+
+
+
+<div class="container-Revised">
+
+  <div style="height:100vh">
+
+    <div th:include = "Revised :: Revised-F"></div>
+
+
+  </div>
+
+</div>
+
+<!-- Facility Details -->
+<div style="page-break-before:always;" class="container-FacilityAgreement">
+
+  <div style="height:100vh">
+
+    <div th:include = "FacilityAgreement :: FacilityAgreement-F">
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<!--Declaration-->
+<div class="container-Declaration">
+
+  <div style="height:100vh;margin-bottom=30px;" >
+    <div th:include = "Declaration :: Declaration-F">
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+
+</html>

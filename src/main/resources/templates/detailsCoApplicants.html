@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div th:fragment = "detailsApplication-F" style="margin-bottom:50px">
+
+
+<div style="margin-bottom:50px">
+    <table style="float: left;width:50%;">
+      <p style="width: 100%; background-color: blue; color:white;text-align: center;padding:0.5rem 0rem">Co-Applicant 1</p>
+
+      <tbody><tr>
+
+        <th>Name</th>
+        <td th:text="${coApplicantDetails.coappName}"></td>
+      </tr>
+      <tr>
+        <th>DOB</th>
+        <td th:text="${coApplicantDetails.coappDOB}"></td>
+      </tr>
+      <tr>
+        <th>Gender</th>
+        <td th:text="${coApplicantDetails.coappGender}"></td>
+      </tr>
+      <tr>
+        <th>PAN NO.</th>
+        <td th:text="${coApplicantDetails.coappPAN}"></td>
+      </tr>
+      <tr>
+        <th>Permanent Address</th>
+        <td th:text="${coApplicantDetails.coappPermanentAddress}"></td>
+      </tr>
+      <tr>
+        <th>Correspondence Address</th>
+        <td th:text="${coApplicantDetails.coappCorespondenceAddress}"></td>
+      </tr>
+      <tr>
+        <th>Father's Name</th>
+        <td th:text="${coApplicantDetails.coappFatherName}"></td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td th:text="${coApplicantDetails.coappPhoneNumber}"></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td th:text="${coApplicantDetails.coappEmail}"></td>
+      </tr>
+
+
+      </tbody>
+    </table>
+
+    <table style="float: right;width:50%;">
+      <p style="width: 100%; background-color: blue; color:white;text-align: center;padding:0.5rem 0rem">Co-Applicant 2</p>
+
+      <tbody><tr>
+
+        <th>Name</th>
+        <td th:text="${coApplicantDetails.coappName}"></td>
+      </tr>
+      <tr>
+        <th>DOB</th>
+        <td th:text="${coApplicantDetails.coappDOB}"></td>
+      </tr>
+      <tr>
+        <th>Gender</th>
+        <td th:text="${coApplicantDetails.coappGender}"></td>
+      </tr>
+      <tr>
+        <th>PAN NO.</th>
+        <td th:text="${coApplicantDetails.coappPAN}"></td>
+      </tr>
+      <tr>
+        <th>Permanent Address</th>
+        <td th:text="${coApplicantDetails.coappPermanentAddress}"></td>
+      </tr>
+      <tr>
+        <th>Correspondence Address</th>
+        <td th:text="${coApplicantDetails.coappCorespondenceAddress}"></td>
+      </tr>
+      <tr>
+        <th>Father's Name</th>
+        <td th:text="${coApplicantDetails.coappFatherName}"></td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td th:text="${coApplicantDetails.coappPhoneNumber}"></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td th:text="${coApplicantDetails.coappEmail}"></td>
+      </tr>
+
+
+      </tbody>
+
+    </table>
+
+  <br/>
+
+  <p style="margin-bottom:20px;margin-top:20px;font-weight: bold;" th:text = "'For and on behalf of ' + ${businessDetails.applicantName} "></p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

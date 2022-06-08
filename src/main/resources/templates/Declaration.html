@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div th:fragment = "Declaration-F">
+
+    <h5 style="text-align:center;">BORROWER DECLARATION - VERNACULAR LANGUAGES/SIGNATURE</h5>
+<br/>
+    <br/>
+    <p th:text = "'We, ' + ${businessDetails.applicantName} + ', a ' + ${businessDetails.constitutionType} + ' existing under the laws of India,
+having its registered office/ principal place of business at ' + ${businessDetails.registeredAddress} + ' (Borrower) have entered into a facility agreement dated ' + ${businessDetails.applicantName} + ' (Facility
+Agreement) with Growth Source Financial Technologies Private Limited (Lender), wherein we have availed a
+Facility from the Lender. Unless otherwise defined herein all capitalized terms shall have the meaning ascribed
+to it in the Facility Agreement.'" >
+    </p>
+<br/>
+    <p>
+        The contents of the following Documents have been explained to me in the vernacular language of English
+        and the same has been understood by me.
+    </p>
+    <br/>
+    <p >List Of Document(s) :</p>
+    <br/>
+    <ol type="1">
+        <li>    Facility Agreement</li>
+        <li>    Sanction Letter</li>
+    </ol>
+
+    <p style="margin-top:50px;" th:text=" 'Place: '+${businessDetails.city}"></p>
+    <p  th:text=" 'Dated: '+ ${businessDetails.city}"></p>
+
+    <br/>
+    <br/>
+
+    <div style="margin-top:30px;">
+    <small  th:text = "'Signed by : '+ ${coApplicantDetails.coappName} "></small>
+    <br/>
+    <small>eSigned using Aadhaar (digio.in)</small>
+    <br/>
+    <small >Date : </small>
+    <br/>
+    <hr style="width:30%;align:left;margin-top:10px;"/>
+    <br/>
+    <p>Signature of Borrower</p>
+    </div>
+</div>
+
+</body>
+</html>
